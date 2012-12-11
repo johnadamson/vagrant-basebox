@@ -1,3 +1,20 @@
+### This is a fork of [vagrant-ubuntu-precise-64](https://github.com/cal/vagrant-ubuntu-precise-64)
+
+
+Note: If you are running OS X 10.7+ and notice untarring the ISO silently
+fails:
+
+    brew tap homebrew/dupes
+    brew install libarchive
+
+You can preemptively determine if you need libarchive by running:
+  
+    tar --version
+
+If you have version 2.8.3, and you run Lion, you most likely will need
+to install libarchive.
+
+
 ## About
 
 This script will: 
