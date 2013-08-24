@@ -1,58 +1,42 @@
-### This is a fork of [vagrant-ubuntu-precise-64](https://github.com/cal/vagrant-ubuntu-precise-64)
-
-
-Note: If you are running OS X 10.7+ and notice untarring the ISO silently
-fails:
-
-    brew tap homebrew/dupes
-    brew install libarchive
-
-You can preemptively determine if you need libarchive by running:
-  
-    tar --version
-
-If you have version 2.8.3, and you run Lion, you most likely will need
-to install libarchive.
-
-
 ## About
+Looking for a basic box to use with Vagrant?
 
-This script will: 
+- [Vagrant](https://github.com/mitchellh/vagrant/wiki/Available-Vagrant-Boxes)
+- [Ubunutu Cloud Images](http://cloud-images.ubuntu.com/vagrant/)
 
- 1. download the Ubuntu 12.04 alternate server, 64bit iso
- 2. ... do some magic to turn it into a vagrant box file
- 3. output package.box 
+What to build your own? This collection of tools will help preseed a basic Ubuntu box.
 
 ## Usage
 
-    ./build.sh
+```sh
+./build.sh
+```
 
-This should do everything you need. If you don't have 
-mkisofs, install [homebrew](http://mxcl.github.com/homebrew/), then:
+# Requirements
 
-    brew install cdrtools
+### mkisofs
 
-### Ben's notes
+Install [homebrew](http://mxcl.github.com/homebrew/), then:
 
-Forked Carl's repo, and it sort of worked out of the box. Tweaked 
-office 12.04 release: 
+```sh
+brew install cdrtools  
+```
 
- - Downloading 12.04 final release. (Today as of this writing)
- - Checking MD5 to make sure it is the right version
- - Added a few more checks for external dependencies, mkisofs
- - Removed wget, and used curl to reduce dependencies
- - Added more output to see what is going on
- - Still designed to work on Mac OS X :)
-    ... though it should work for Linux systems too (maybe w/ a bit of porting)
+### libarchive
 
-### Carl's original README
+If you are running Mac OS 10.7+ and notice untarring the ISO silently fails:
 
-Decided I wanted to learn how to make a vagrant base box.
+```sh
+brew tap homebrew/dupes
+brew install libarchive
+```
 
-Let's target Precise Pangolin since it should be releasing soon, I said.
+You can preemptively determine if you need libarchive by running
 
-Let's automate everything, I said.
+```sh
+tar --version
+```
 
-Let's do it all on my macbook, I said.
+If you have version 2.8.3, and you run Lion, you will likely need to install
+libarchive.
 
-Woo.
